@@ -21,7 +21,6 @@
 		<li><a href="PopUpServlet" target="main">ポップアップ</a></li>
 		<li><a href="JqueryServlet" target="main">JQuery</a></li>
 		<li><a href="SecurityServlet" target="main">Security</a></li>
-		<li><a href="SecurityServlet" target="main">abcdes</a></li>
 	</ul>
 	</body>
 
