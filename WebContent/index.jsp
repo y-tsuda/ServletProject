@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here　test</title>
+<title>Insert title here　te</title>
 </head>
 <body>
 <form method="post" action="DbServlet">
