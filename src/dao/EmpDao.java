@@ -31,15 +31,6 @@ public class EmpDao extends CommonMySQLDAO {
 		}
 		
 		sql = sql + " ORDER BY id";
-//=======
-//import vo.EmpValueObject;
-//import model.Emp;
-//
-//public class EmpDao extends CommonMySQLDAO {
-//
-//	public List<Emp> searchEmp() {
-//		List<Emp> retList = new ArrayList<Emp>();
-//		String sql = "SELECT * FROM emp LEFT OUTER JOIN code ON emp.grade = code.code_value AND code.code_kbn = 1 WHERE del_flg = '0' ORDER BY id";
 		// プリペアステートメントを取得し、実行SQLを渡す
 		PreparedStatement statement;
 		try {
