@@ -21,7 +21,8 @@ public class EmpDao extends CommonMySQLDAO {
 		List<Emp> retList = new ArrayList<Emp>();
 		String id = w_emp.getId();
 		String name = w_emp.getName();
-		String sql = "SELECT * FROM emp LEFT OUTER JOIN code ON emp.grade = code.code_value AND code.code_kbn = 1 WHERE del_flg = '0'";
+		String sql = "SELECT * FROM emp LEFT OUTER JOIN code ON emp.grade = code.value " 
+				+ " AND code.kbn = 1 WHERE del_flg = '0'";
 		
 		if (!StringUtils.isEmpty(id)) {
 			sql = sql + " AND emp.id ='" + id + "'"; 
@@ -29,8 +30,7 @@ public class EmpDao extends CommonMySQLDAO {
 		if (!StringUtils.isEmpty(name)){
 			sql = sql + " AND emp.name LIKE '%" + name + "%'";
 		}
-		
-		sql = sql + " ORDER BY id";
+		sql = sql + " ORDER BY emp.id";
 		// プリペアステートメントを取得し、実行SQLを渡す
 		PreparedStatement statement;
 		try {
@@ -45,9 +45,9 @@ public class EmpDao extends CommonMySQLDAO {
 
 				// クエリー結果をVOへ格納(あらかじめクエリー結果とVOの変数名は一致させている)
 				emp.setId(rs.getString("id"));
-				emp.setName(rs.getString("name"));
+				emp.setName(rs.getString("emp.name"));
 				emp.setHireDate(rs.getDate("hire_date"));
-				emp.setGrade(rs.getString("code_jpn"));
+				emp.setGrade(rs.getString("code.name"));
 				emp.setSalary(rs.getInt("salary"));
 
 				retList.add(emp);

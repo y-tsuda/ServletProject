@@ -13,7 +13,7 @@ public class AccountDao extends CommonMySQLDAO {
 
 	public Account findByLogin(Login login) {
 		Account account = null;
-		String sql = "SELECT id, password, mail, name" + " FROM Account WHERE id = ? AND password = ?";
+		String sql = "SELECT id, password, mail, name" + " FROM account WHERE id = ? AND password = ?";
 		PreparedStatement psmt;
 		try {
 			psmt = getPreparedStatement(sql);
@@ -41,7 +41,7 @@ public class AccountDao extends CommonMySQLDAO {
 	public int registerUser(Account account) {
 		int count = 0;
 		try {
-			String sql = " INSERT INTO Account VALUES (?,?,?,?,now(),now())";
+			String sql = " INSERT INTO account VALUES (?,?,?,?,now(),now())";
 			PreparedStatement psmt = getPreparedStatement(sql);
 			psmt.setString(1, account.getId());
 			psmt.setString(2, account.getPassword());

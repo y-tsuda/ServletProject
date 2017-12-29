@@ -21,8 +21,8 @@
 		<th width="100px">氏名</th>
 		<th width="100px">入社日</th>
 		<th width="50px">役職</th>
-		<th width="100px">給与</th>
-		<th width="50px">編集</th>
+		<th width="70px">給与</th>
+		<th width="30px">編集</th>
 	</tr>
 	<c:forEach items="${empList}" var="list">
 	<tr>
