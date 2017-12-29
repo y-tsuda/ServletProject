@@ -59,7 +59,12 @@ public class EmpDao extends CommonMySQLDAO {
 		}
 		return retList;
 	}
-
+	
+	/**
+	 * select処理
+	 * @param id
+	 * @return
+	 */
 	public EmpValueObject searchEmpById(String id) {
 		//Emp emp = new Emp();
 		EmpValueObject vo = new EmpValueObject();
@@ -94,6 +99,10 @@ public class EmpDao extends CommonMySQLDAO {
 		return vo;
 	}
 	
+	/**
+	 * 登録処理
+	 * @param vo
+	 */
 	public void entryEmp(EmpValueObject vo) {
 		String sql = "INSERT INTO emp(name, hire_date, grade, salary, create_date, update_date, del_flg) VALUES(?,?,?,?,?,?,?)";
 		try {
